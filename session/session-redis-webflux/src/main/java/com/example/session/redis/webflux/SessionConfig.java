@@ -38,6 +38,7 @@ class SessionConfig {
 
 	@Bean
 	@Qualifier("springSessionDefaultRedisSerializer")
+	@SuppressWarnings("removal") // Jackson 3
 	GenericJackson2JsonRedisSerializer redisSerializer(ObjectMapper objectMapper) {
 		return new GenericJackson2JsonRedisSerializer(objectMapper);
 	}
