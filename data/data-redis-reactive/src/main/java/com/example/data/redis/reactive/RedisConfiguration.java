@@ -30,6 +30,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 class RedisConfiguration {
 
 	@Bean
+	@SuppressWarnings("removal") // Jackson 3
 	ReactiveRedisTemplate<String, Person> redisOperations(ObjectMapper objectMapper,
 			ReactiveRedisConnectionFactory connectionFactory) {
 		Jackson2JsonRedisSerializer<Person> serializer = new Jackson2JsonRedisSerializer<>(objectMapper, Person.class);

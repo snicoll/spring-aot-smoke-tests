@@ -52,6 +52,7 @@ class CLR implements CommandLineRunner {
 		pubSub();
 	}
 
+	@SuppressWarnings("removal") // Jackson 3
 	private void jsonSerializer() {
 
 		Jackson2JsonRedisSerializer<Person> serializer = new Jackson2JsonRedisSerializer<>(objectMapper, Person.class);
