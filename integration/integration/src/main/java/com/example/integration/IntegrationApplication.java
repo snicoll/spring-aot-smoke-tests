@@ -71,6 +71,7 @@ public class IntegrationApplication {
 	}
 
 	@Bean
+	@SuppressWarnings("removal") // Jackson 3
 	RedisChannelMessageStore redisChannelMessageStore(RedisConnectionFactory connectionFactory) {
 		RedisChannelMessageStore redisChannelMessageStore = new RedisChannelMessageStore(connectionFactory);
 		redisChannelMessageStore
